@@ -26,7 +26,7 @@ public class Lektion {
 	
 	public String getSprache1()
 	{
-		return.this.sprache2;
+		return this.sprache2;
 	}
 	
 	public ArrayList<Vokabel> getVokabelListe() {
