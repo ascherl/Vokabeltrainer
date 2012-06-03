@@ -14,6 +14,25 @@ public class Lektion {
 	{
 	}
 	
+	public String getName()
+	{
+		return this.name;
+	}
+	
+	public String getSprache1()
+	{
+		return this.sprache1;
+	}
+	
+	public String getSprache1()
+	{
+		return.this.sprache2;
+	}
+	
+	public ArrayList<Vokabel> getVokabelListe() {
+		return this.vokabelListe;
+	}
+	
 	public Lektion zufaelligeListe(Lektion original)
 	{
 		Lektion rdmLektion = new Lektion();
@@ -35,7 +54,6 @@ public class Lektion {
 	public Lektion VokabelnEingeben()
 	{
 		Lektion neueLektion = new Lektion();
-		String input = null;
 
 		neueLektion.sprache1 = IOTools.readString("Bitte gib die eine Sprache ein: ");
 		neueLektion.sprache2 = IOTools.readString("Bitte gib die andere Sprache ein: ");
@@ -48,10 +66,9 @@ public class Lektion {
 			wort1 = IOTools.readString("Wort in der Sprache (\"STOP!\" zum Beenden)"+ neueLektion.sprache1);
 			if(wort1!="STOP!") 
 			{
-				Vokabel vokabel = new Vokabel(); 
+				Vokabel vokabel = new Vokabel();
 				wort2 = IOTools.readString("Wort in der Sprache "+neueLektion.sprache2);
-				vokabel.neueVokabel(wort1, wort2);
-				neueLektion.vokabelListe.add(vokabel); // ?!
+				neueLektion.vokabelListe.add(vokabel.neueVokabel(wort1, wort2)); // ?!
 			}
 		}while(wort1!="STOP!");
 		
