@@ -24,28 +24,36 @@ public class Session {
 		String eingabe = null;
 		
 		for(int i = 0; i <= laenge; i++)
-		if(rdm.nextBoolean())
 		{
-			boolean antwort = true;
-			System.out.println("lektion.vokabelListe.getWort()");
-			eingabe = IOTools.readString("Bitte gib die Loesung ein: ");
-			
-			if(lektion.getVokabelListe().get(i).getWort() == eingabe)
+			if(rdm.nextBoolean())
 			{
-				System.out.println("Richtig!");
+				System.out.println( lektion.getVokabelListe().get(i).getWort() );
+				eingabe = IOTools.readString("Bitte gib die Loesung ein: ");
+				
+				if(lektion.getVokabelListe().get(i).getWort() == eingabe)
+				{
+					System.out.println("Richtig!");
+				}
+				else
+				{
+					anzahlFalsch++;
+					falscheAntworten.addVokabel(lektion.getVokabelListe().get(i));
+				}
 			}
 			else
-			{
-
-				falscheAntworten.getVokabelListe().add(lektion.getVokabelListe().get(i));
-				
-			}
+				System.out.println("");
+				eingabe = IOTools.readString("Bitte gib die Loesung ein: ");
 			
-		
-
+				if(lektion.getVokabelListe().get(i).getWort() == eingabe)
+				{
+					System.out.println("Richtig!");
+				}
+				else
+				{
+					anzahlFalsch++;
+					falscheAntworten.addVokabel(lektion.getVokabelListe().get(i));
+				}
+		}
 	}
-	public Lektion falscheAntworten();
-	{
-		
-	}
+	
 }

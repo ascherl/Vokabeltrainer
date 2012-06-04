@@ -14,6 +14,13 @@ public class Lektion {
 	{
 	}
 	
+	public Lektion(String name, String sprache1, String sprache2)
+	{
+		this.name = name;
+		this.sprache1 = sprache1;
+		this.sprache2 = sprache2;
+	}
+	
 	public String getName()
 	{
 		return this.name;
@@ -24,7 +31,7 @@ public class Lektion {
 		return this.sprache1;
 	}
 	
-	public String getSprache1()
+	public String getSprache2()
 	{
 		return this.sprache2;
 	}
@@ -35,18 +42,14 @@ public class Lektion {
 	
 	public Lektion zufaelligeListe(Lektion original)
 	{
-		Lektion rdmLektion = new Lektion();
-		
-		rdmLektion.name = original.name;
-		rdmLektion.sprache1 = original.sprache1;
-		rdmLektion.sprache2 = original.sprache2;
+		Lektion rdmLektion = new Lektion(original.name, original.sprache1, original.sprache2);
 		
 		Random rdm = new Random();
 		while(original.vokabelListe.size()>0)
 		{
 			int index = rdm.nextInt(original.vokabelListe.size());
 			rdmLektion.vokabelListe.add(original.vokabelListe.get(index));
-			original.
+			original.vokabelListe.remove(index);
 		}
 		
 		return rdmLektion;
@@ -54,26 +57,32 @@ public class Lektion {
 	
 	public Lektion VokabelnEingeben()
 	{
-		Lektion neueLektion = new Lektion();
 
-		neueLektion.sprache1 = IOTools.readString("Bitte gib die eine Sprache ein: ");
-		neueLektion.sprache2 = IOTools.readString("Bitte gib die andere Sprache ein: ");
+		String name = IOTools.readString("Bitte gib die einen Namen für die Lektion ein: ");
+		String sprache1 = IOTools.readString("Bitte gib die eine Sprache ein: ");
+		String sprache2 = IOTools.readString("Bitte gib die andere Sprache ein: ");
+		Lektion neueLektion = new Lektion(name, sprache1, sprache2);
 		System.out.println("\n\n");
 		
 		String wort1 = null;
 		String wort2 = null;
 		
 		do{
-			wort1 = IOTools.readString("Wort in der Sprache (\"STOP!\" zum Beenden)"+ neueLektion.sprache1);
-			if(wort1!="STOP!") 
-			{
-				Vokabel vokabel = new Vokabel();
-				wort2 = IOTools.readString("Wort in der Sprache "+neueLektion.sprache2);
+			wort1 = IOTools.readString("Wort in der Sprache "+ neueLektion.sprache1 + " (\"Return\" zum Beenden) ");
+			System.out.println(wort1);
+
+				System.out.println("YEA!");
+				Vokabel vokabel = null;
+				wort2 = IOTools.readString("Wort in der Sprache "+neueLektion.sprache2+ " ");
 				neueLektion.vokabelListe.add(vokabel.neueVokabel(wort1, wort2)); // ?!
-			}
-		}while(wort1!="STOP!");
+
+		}while(wort1.equals(null));
 		
 		return neueLektion;
+	}
+
+	public void addVokabel(Vokabel vokabel) {
+		this.vokabelListe.add(vokabel);
 	}
 	
 }
