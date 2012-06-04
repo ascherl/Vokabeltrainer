@@ -2,16 +2,14 @@
 public class Vokabel {
 	private String wort;
 	private String uebersetzung;
-	public Vokabel()
-	{
-		this.wort = null;
-		this.uebersetzung = null;
-	}
-	
-	public Vokabel neueVokabel(String wort1, String wort2)
+
+	public Vokabel(String wort1, String wort2)
 	{
 		this.wort = wort1;
 		this.uebersetzung = wort2;
+	}
+	
+	public Vokabel getVokabel(){
 		return this;
 	}
 	

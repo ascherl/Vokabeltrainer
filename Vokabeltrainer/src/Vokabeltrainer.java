@@ -21,18 +21,18 @@ public class Vokabeltrainer {
 			
 			auswahl = IOTools.readInteger();
 			
-			switch(auswahl){
-				case 1:
+			if(auswahl==1)
+			{
 					String pfad = IOTools.readString("Bitte gib den Dateinamen ein: ");
 					Input input = new Input();
-
 					Session session = new Session();
-
-				//	session.Abfragen(input.DateiEinlesen(pfad));
-				case 2:
-					Output output = new Output();
-					Lektion lektion = new Lektion();
-					output.LektionAbspeichern(lektion.VokabelnEingeben());
+					session.Abfragen(input.DateiEinlesen(pfad));
+			}
+			if(auswahl==2)
+			{
+				Output output = new Output();
+				Lektion lektion = new Lektion();
+				output.LektionAbspeichern(lektion.VokabelnEingeben());
 			}
 		}
 

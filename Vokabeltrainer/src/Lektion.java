@@ -19,6 +19,7 @@ public class Lektion {
 		this.name = name;
 		this.sprache1 = sprache1;
 		this.sprache2 = sprache2;
+		this.vokabelListe = new ArrayList<Vokabel>();
 	}
 	
 	public String getName()
@@ -69,14 +70,14 @@ public class Lektion {
 		
 		do{
 			wort1 = IOTools.readString("Wort in der Sprache "+ neueLektion.sprache1 + " (\"Return\" zum Beenden) ");
-			System.out.println(wort1);
-
-				System.out.println("YEA!");
-				Vokabel vokabel = null;
+			if (!wort1.equals(null))
+			{
 				wort2 = IOTools.readString("Wort in der Sprache "+neueLektion.sprache2+ " ");
-				neueLektion.vokabelListe.add(vokabel.neueVokabel(wort1, wort2)); // ?!
-
-		}while(wort1.equals(null));
+				Vokabel vokabel = new Vokabel(wort1, wort2);
+				System.out.println(vokabel.getUebersetzung());
+				neueLektion.vokabelListe.add(vokabel);
+			}
+		}while(!wort1.equals(null));
 		
 		return neueLektion;
 	}
