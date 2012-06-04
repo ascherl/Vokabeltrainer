@@ -10,7 +10,7 @@ public class Output {
 			fw = new FileWriter( eingabe.getName() + ".voc" );
 			fw.write( eingabe.getName() + System.getProperty("line.separator") );
 			fw.write( eingabe.getSprache1() + System.getProperty("line.separator") );
-			fw.write( eingabe.getSprache2() + System.getProperty("line.separator") );
+			fw.write( eingabe.getSprache2 () + System.getProperty("line.separator") );
 
 			while(eingabe.getVokabelListe().size()>0)
 			{

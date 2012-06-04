@@ -46,6 +46,7 @@ public class Lektion {
 		{
 			int index = rdm.nextInt(original.vokabelListe.size());
 			rdmLektion.vokabelListe.add(original.vokabelListe.get(index));
+			original.
 		}
 		
 		return rdmLektion;
