@@ -63,22 +63,21 @@ public class Lektion {
 		String sprache1 = IOTools.readString("Bitte gib die eine Sprache ein: ");
 		String sprache2 = IOTools.readString("Bitte gib die andere Sprache ein: ");
 		Lektion neueLektion = new Lektion(name, sprache1, sprache2);
-		System.out.println("\n\n");
+		System.out.println("");
 		
 		String wort1 = null;
 		String wort2 = null;
 		
 		do{
-			wort1 = IOTools.readString("Wort in der Sprache "+ neueLektion.sprache1 + " (\"Return\" zum Beenden) ");
-			if (!wort1.equals(null))
+			wort1 = IOTools.readString("\nWort in der Sprache "+ neueLektion.sprache1 + " (\"STOP\" zum Beenden) ");
+			if (!wort1.equals("STOP"))
 			{
 				wort2 = IOTools.readString("Wort in der Sprache "+neueLektion.sprache2+ " ");
 				Vokabel vokabel = new Vokabel(wort1, wort2);
-				System.out.println(vokabel.getUebersetzung());
 				neueLektion.vokabelListe.add(vokabel);
 			}
-		}while(!wort1.equals(null));
-		
+		}while(!wort1.equals("STOP"));
+		System.out.println();
 		return neueLektion;
 	}
 

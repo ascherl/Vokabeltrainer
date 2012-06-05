@@ -26,6 +26,7 @@ public class Session {
 		
 		for(int i = 0; i < laenge; i++)
 		{
+			System.out.println();
 			if(rdm.nextBoolean())
 			{
 				System.out.println( lektion.getVokabelListe().get(i).getWort() );
@@ -59,6 +60,9 @@ public class Session {
 		}
 		Output output = new Output();
 		output.LektionAbspeichern(falscheAntworten);
+		System.out.println("\nFERTIG!\n");
+		if(anzahlFalsch>0) System.out.println("Du hast " + anzahlFalsch + " von " + lektion.getVokabelListe().size() + " Vokabeln falsch beantwortet. Diese Vokabeln wurden zur erneuten Abfrage in \"Lektion0.voc\" abgespeichert!");
+		else System.out.println("Du hast alle Fragen richtig beantwortet.");
 	}
 	
 }

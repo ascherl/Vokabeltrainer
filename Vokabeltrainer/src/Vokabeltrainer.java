@@ -14,6 +14,7 @@ public class Vokabeltrainer {
 		int auswahl = 0;
 		
 		while( auswahl != 9 ){
+			System.out.println("\nMENÜ");
 			System.out.println("\nBitte wähle aus:");
 			System.out.println("  (1) Vokabeln abfragen");
 			System.out.println("  (2) Vokabeln eingeben");
@@ -23,6 +24,7 @@ public class Vokabeltrainer {
 			
 			if(auswahl==1)
 			{
+					System.out.println();
 					String pfad = IOTools.readString("Bitte gib den Dateinamen ein: ");
 					Input input = new Input();
 					Session session = new Session();
