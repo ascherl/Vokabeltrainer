@@ -1,11 +1,14 @@
 import java.io.*;
 
-
+/**
+ * Liest eine Datei ein und gibt den Inhalt in eine Lektion ein.
+ * @author Rudi Ascherl
+ */
 public class Input {
 	
 	public Lektion DateiEinlesen(String pfad)
 	{
-		Lektion lektion = null;
+		Lektion lektion = null; //muss au§erhalb des try-Scopes sein, weil sonst die RŸckgabe nicht mšglich ist. WARUM? WARUM? WARUM?
 		Reader fr = null;
 		try {
 			fr = new FileReader(pfad);

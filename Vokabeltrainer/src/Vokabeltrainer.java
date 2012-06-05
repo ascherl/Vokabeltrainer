@@ -3,6 +3,8 @@ import Tools.IO.*;
 public class Vokabeltrainer {
 
 	/**
+	 * Hauptroutine für den Vokabeltrainer
+	 * @author Jakob Gerzen
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -25,7 +27,7 @@ public class Vokabeltrainer {
 			if(auswahl==1)
 			{
 					System.out.println();
-					String pfad = IOTools.readString("Bitte gib den Dateinamen ein: ");
+					String pfad = IOTools.readString("\nBitte gib den Dateinamen ein: ");
 					Input input = new Input();
 					Session session = new Session();
 					session.Abfragen(input.DateiEinlesen(pfad));

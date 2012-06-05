@@ -1,5 +1,9 @@
 import java.io.*;
 
+/**
+ * Speichert eine Lektion im aktuellen Verzeichnis als ${name}.voc ab.
+ * @author Jakob Gerzen
+ */
 public class Output {
 	public void LektionAbspeichern(Lektion eingabe)
 	{

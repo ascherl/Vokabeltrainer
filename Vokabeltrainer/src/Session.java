@@ -1,7 +1,10 @@
 import java.util.Random;
 import Tools.IO.IOTools;
 
-
+/**
+ * Klasse für eine Lernsitzung in einem Vokabelprogramm.
+ * @author Jakob Gerzen
+ */
 public class Session {
 	
 	private int anzahlFalsch;
@@ -15,7 +18,10 @@ public class Session {
 	
 	
 
-	
+	/**
+	 * Fragt eine Lektion Vokabeln ab, speichert dabei alle falschen Antworten und gibt sie in eine Datei "Lektion0.voc"
+	 * @param lektion 
+	 */
 	public void Abfragen (Lektion lektion)
 	{
 		lektion = lektion.zufaelligeListe(lektion);

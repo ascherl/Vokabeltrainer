@@ -3,17 +3,29 @@ import java.util.Random;
 
 import Tools.IO.IOTools;
 
-
+/**
+ * Lektion für ein Vokabelprogramm
+ * @author Rudi Ascherl
+ */
 public class Lektion {
 	private String name;
 	private String sprache1;
 	private String sprache2;
 	private ArrayList<Vokabel> vokabelListe;
 	
+	/**
+	 * Erzeugt leere Lektion.
+	 */
 	public Lektion()
 	{
 	}
 	
+	/**
+	 * 
+	 * @param name Name der Lektion
+	 * @param sprache1 Die erste Sprache der Vokabeln
+	 * @param sprache2 Die andere Sprache der Vokabeln
+	 */
 	public Lektion(String name, String sprache1, String sprache2)
 	{
 		this.name = name;
@@ -41,6 +53,11 @@ public class Lektion {
 		return this.vokabelListe;
 	}
 	
+	/**
+	 * Mischt die Lektion, indem mit einem zufälligen Integer von der Länge der Liste eine Vokabel gezogen wird und der an die vokabelListe einer neue Lektion angehängt wird.
+	 * @param original Die Lektion, die gemischt werden soll.
+	 * @return Die durchgemischte Lektion.
+	 */
 	public Lektion zufaelligeListe(Lektion original)
 	{
 		Lektion rdmLektion = new Lektion(original.name, original.sprache1, original.sprache2);
@@ -56,6 +73,10 @@ public class Lektion {
 		return rdmLektion;
 	}
 	
+	/**
+	 * Methode zur Eingabe einer neuen Lektion und neuer Vokabeln.
+	 * @return Die eben eingegebene Lektion.
+	 */
 	public Lektion VokabelnEingeben()
 	{
 
@@ -81,6 +102,10 @@ public class Lektion {
 		return neueLektion;
 	}
 
+	/**
+	 * Fügt die Vokabel vokabel ans Ende der vokabelListe ein.
+	 * @param vokabel einzufügende Vokabel
+	 */
 	public void addVokabel(Vokabel vokabel) {
 		this.vokabelListe.add(vokabel);
 	}
